@@ -1,5 +1,5 @@
 FROM node:20-alpine
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN addgroup -S appgroup && adduser -S -D -H appuser -G appgroup
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --ignore-scripts --only=production
